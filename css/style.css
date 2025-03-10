@@ -1,0 +1,1030 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: "Montserrat", sans-serif; */
+/* font-family: "Fraunces", serif; */
+/* font-family: "Libre Bodoni", serif; */
+
+/*  Reset CSS  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+em {
+  font-style: normal;
+}
+
+.hidden {
+  display: block;
+  position: absolute;
+  left: -1000%;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: #f8f9fa;
+}
+
+:root {
+  --ft-sanserif: "Montserrat";
+  --ft-serif: "Libre Bodoni";
+  --pf-color: #faf3e0;
+  --pf-light: #333;
+  --web-color: #8e684c;
+  --rw-color: #fed520;
+  --rea-color: #1f76c7;
+}
+
+#wrap {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 로고 */
+/* h1 a {
+  font-size: 2rem;
+  font-family: var(--ft-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--pf-color);
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  transition: all .5s;
+  z-index: 50;
+} */
+
+/* 메뉴 */
+#menu {
+  position: fixed;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  z-index: 50;
+}
+
+#menu a {
+  display: block;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #999;
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+  position: relative;
+  margin-left: 60px;
+  padding: 8px 0;
+}
+
+#menu a::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 6px;
+  background: #faf3e0;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.3s;
+  position: absolute;
+  left: -120px;
+  top: 20px;
+}
+
+#menu li.on a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #faf3e0;
+  opacity: 1;
+}
+
+#menu li.on a::before {
+  opacity: 1;
+  left: -70px;
+}
+
+#menu li:nth-child(5).on a::before {
+  background: var(--rw-color);
+}
+
+#menu li:nth-child(5).on a {
+  color: var(--rw-color);
+}
+
+#menu li:nth-child(6).on a::before {
+  background: var(--rea-color);
+}
+
+#menu li:nth-child(6).on a {
+  color: var(--rea-color);
+}
+
+#menu li:hover a {
+  font-size: 1.5rem;
+  opacity: 1;
+}
+
+#menu li:nth-child(1):hover a {
+  color: var(--pf-color);
+}
+
+#menu li:nth-child(2):hover a {
+  color: var(--pf-color);
+}
+
+#menu li:nth-child(3):hover a {
+  color: var(--web-color);
+}
+
+#menu li:nth-child(4):hover a {
+  color: var(--web-color);
+}
+
+#menu li:nth-child(5):hover a {
+  color: var(--rw-color);
+}
+
+#menu li:nth-child(6):hover a {
+  color: var(--rea-color);
+}
+
+/* section 공통 */
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+
+section:nth-of-type(1) {
+  background: #000;
+  /* background: url(../image/bg/main_bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+section:nth-of-type(2) {
+  background: #19202b;
+}
+
+section:nth-of-type(3) {
+  background: #36c;
+}
+
+section:nth-of-type(4) {
+  background: #7faa00;
+}
+
+section:nth-of-type(5) {
+  background: #000;
+}
+
+section:nth-of-type(6) {
+  background: #333;
+}
+
+.qr_img img {
+  width: 100px;
+}
+
+.sec_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.sec_head .head_tit h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--pf-color);
+}
+.sec_head .head_tit p {
+  font-size: 4rem;
+  font-family: var(--ft-serif);
+  color: #f8f9fa;
+}
+.sec_head a {
+  font-size: 1.5rem;
+  font-family: var(--ft-serif);
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 50px;
+  transition: all 0.3s ease-out;
+}
+
+/* home 영역 */
+#home {
+  position: relative;
+}
+
+#home div {
+  position: absolute;
+  left: 500px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pf-color);
+}
+
+#home div p {
+  font-size: 1.8rem;
+  font-family: var(--ft-sanserif);
+}
+
+#home div h2 {
+  font-size: 15rem;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* 프로필 영역 */
+
+.pf_box {
+  width: 60%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  padding: 80px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pf_left ul.link_btn {
+  margin-top: 50px;
+  display: flex;
+  gap: 50px;
+}
+
+.pf_left ul.link_btn li a:hover {
+  background: #ff9a8c;
+  color: #f8f9fa;
+  border: 2px solid #ff9a8c;
+  letter-spacing: 6px;
+}
+
+.pf_left ul.link_btn li a:nth-of-type(1):hover {
+  letter-spacing: 2px;
+}
+
+.btn,
+.pf_left ul.link_btn li a {
+  width: 300px;
+  font-size: 1.4rem;
+  font-family: var(--ft-sanserif);
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 20px;
+  padding: 10px 0;
+  transition: 0.4s ease-out;
+}
+
+.tit_li,
+.web_right .tit ul,
+.mb_right .tit ul,
+.rw_right .tit ul,
+.dp_right .tit p {
+  /* font-size: 1.1rem; */
+  /* font-weight: 400; */
+  line-height: 1.8rem;
+  margin-top: 30px;
+}
+
+.common_dt,
+.web_right .colorfont dl.color dt,
+.web_right .colorfont dl.font dt,
+.web_right .produce dl dt,
+.web_right .skill dl dt,
+.mb_right .colorfont dl.color dt,
+.mb_right .colorfont dl.font dt,
+.mb_right .produce dl dt,
+.mb_right .skill dl dt,
+.rw_right .colorfont dl.color dt,
+.rw_right .colorfont dl.font dt,
+.rw_right .produce dl dt,
+.rw_right .skill dl dt,
+.dp_right .colorfont dl.color dt,
+.dp_right .colorfont dl.font dt,
+.dp_right .produce dl dt,
+.dp_right .skill dl dt {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.color_dd,
+.web_right .colorfont dl.color dd,
+.mb_right .colorfont dl.color dd,
+.rw_right .colorfont dl.color dd,
+.dp_right .colorfont dl.color dd {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-right: 10px;
+}
+
+.common_dd,
+.web_right .colorfont dl.font dd,
+.web_right .produce dl dd,
+.web_right .skill dl dd,
+.mb_right .colorfont dl.font dd,
+.mb_right .produce dl dd,
+.mb_right .skill dl dd,
+.rw_right .colorfont dl.font dd,
+.rw_right .produce dl dd,
+.rw_right .skill dl dd,
+.dp_right .colorfont dl.font dd,
+.dp_right .produce dl dd,
+.dp_right .skill dl dd {
+  font-size: 1.1rem;
+  color: #f8f9fa;
+}
+
+.pf_right p {
+  font-family: var(--ft-serif);
+  font-size: 4.2rem;
+  font-weight: 500;
+  color: #faf3e0;
+}
+
+.pf_right ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.pf_right ul li {
+  margin-top: 30px;
+}
+
+.pf_right ul li dl dt {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-family: var(--ft-serif);
+  font-weight: 300;
+  color: #f8f9fa;
+  border-bottom: 3px solid #f8f9fa;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+}
+
+.pf_right ul li dl dd {
+  font-family: var(--ft-sanserif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #faf3e0;
+  line-height: 2rem;
+}
+
+.pf_right ul li dl dd span {
+  font-family: "Noto Sans KR";
+  font-weight: 400;
+}
+
+.pf_right .pf_skill {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.pf_right .pf_skill li {
+  display: flex;
+  margin-top: 0;
+}
+
+/* 기업형 웹 */
+#web {
+  position: relative;
+}
+
+#web .sec_head a {
+  color: var(--pf-color);
+  border: 1px solid var(--pf-color);
+}
+
+#web .sec_head a:hover {
+  color: #f8f9fa;
+  background: #ff9a8c;
+  border: 1px solid #ff9a8c;
+}
+
+.web_warp {
+  width: 71%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.web_left {
+  float: left;
+  width: 50%;
+  position: absolute;
+  left: 5%;
+  top: 22%;
+}
+
+.web_left div.pc {
+  width: 75%;
+  position: relative;
+  z-index: 30;
+}
+
+.web_left div.pc img {
+  width: 100%;
+}
+
+.web_left img.gif {
+  width: 73%;
+  position: absolute;
+  top: 4.5%;
+  left: 1%;
+  height: 67%;
+}
+
+.web_right {
+  float: right;
+  width: 50%;
+}
+
+.web_right .tit {
+  position: relative;
+}
+
+.web_right .tit ul {
+  color: #f8f9fa;
+}
+
+.web_right .colorfont {
+  margin-top: 30px;
+  display: flex;
+}
+
+.web_right .colorfont dl.color {
+  margin-right: 80px;
+}
+
+.web_right .colorfont dl.color dt {
+  margin-bottom: 10px;
+  color: #faf3e0;
+}
+
+.web_right .colorfont dl.color dd:nth-of-type(1) {
+  background: #36c;
+  border: 1px solid #fff;
+}
+
+.web_right .colorfont dl.color dd:nth-of-type(2) {
+  background: #9c0;
+}
+
+.web_right .colorfont dl.color dd:nth-of-type(3) {
+  background: #ff5f00;
+}
+
+.web_right .colorfont dl.font dt {
+  margin-bottom: 10px;
+  color: #faf3e0;
+}
+
+.web_right .produce {
+  display: flex;
+  margin-top: 30px;
+}
+
+.web_right .produce dl {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.web_right .produce dl dt {
+  margin-right: 20px;
+  color: #faf3e0;
+}
+
+.web_right .skill {
+  display: flex;
+  margin-top: 30px;
+}
+
+.web_right .skill dl dt {
+  margin-bottom: 10px;
+  color: #faf3e0;
+}
+
+/* 기업형 모바일 */
+#mb {
+  position: relative;
+}
+
+#mb .sec_head a {
+  color: var(--web-color);
+  border: 1px solid var(--web-color);
+}
+
+#mb .sec_head a:hover {
+  color: #f8f9fa;
+  background: var(--web-color);
+}
+
+#mb .sec_head .head_tit span {
+  font-family: var(--ft-serif);
+  font-size: 3rem;
+  font-weight: 600;
+  color: #acacac;
+  margin-left: 20px;
+}
+
+.mb_warp {
+  width: 70%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mb_left {
+  float: left;
+  width: 40%;
+  position: absolute;
+  left: 8%;
+  top: 24%;
+}
+
+.mb_left div.mb_imgbox {
+  width: 45%;
+  position: relative;
+}
+
+.mb_left div.mb_imgbox img.mb {
+  width: 100%;
+  position: relative;
+  z-index: 30;
+}
+
+.mb_left div.mb_imgbox img.gif {
+  width: 98%;
+  position: absolute;
+  top: 1.1%;
+  left: 1.8%;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+.mb_left img.mb_back {
+  width: 35%;
+  position: absolute;
+  top: 17%;
+  right: 18%;
+  rotate: 8deg;
+}
+
+.mb_right {
+  float: right;
+  width: 50%;
+}
+
+.mb_right .tit {
+  position: relative;
+}
+
+.mb_right .tit ul {
+  color: #f8f9fa;
+}
+
+#wrap #web ul,
+#wrap #mb ul,
+#wrap #rw ul {
+  list-style-type: disc;
+}
+
+.mb_right .colorfont {
+  margin-top: 30px;
+  display: flex;
+}
+
+.mb_right .colorfont dl.color {
+  margin-right: 80px;
+}
+
+.mb_right .colorfont dl.color dt {
+  margin-bottom: 10px;
+  color: var(--pf-color);
+}
+
+.mb_right .colorfont dl.color dd:nth-of-type(1) {
+  background: #36c;
+}
+
+.mb_right .colorfont dl.color dd:nth-of-type(2) {
+  background: #9c0;
+}
+
+.mb_right .colorfont dl.color dd:nth-of-type(3) {
+  background: #ff5f00;
+}
+.mb_right .colorfont dl.font dt {
+  margin-bottom: 10px;
+  color: var(--pf-color);
+}
+
+.mb_right .produce {
+  display: flex;
+  margin-top: 30px;
+}
+
+.mb_right .produce dl {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.mb_right .produce dl dt {
+  margin-right: 20px;
+  color: var(--pf-color);
+}
+
+.mb_right .skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.mb_right .skill dl {
+  width: 80%;
+}
+
+.mb_right .skill dl dt {
+  margin-bottom: 10px;
+  color: var(--pf-color);
+}
+
+.mb_right .skill div {
+  margin: 30px 0;
+  background: #f8f9fa;
+  padding: 5px;
+}
+
+/* 반응형 */
+#rw {
+  position: relative;
+}
+
+#rw .sec_head a {
+  color: var(--rw-color);
+  border: 1px solid var(--rw-color);
+}
+
+#rw .sec_head a:hover {
+  color: #2a2a2a;
+  background: var(--rw-color);
+}
+
+.rw_warp {
+  width: 70%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rw_left {
+  float: left;
+  width: 50%;
+  position: absolute;
+  left: 7%;
+  top: 23%;
+}
+
+.rw_left div.rw_imgbox {
+  width: 65%;
+  position: relative;
+}
+
+.rw_left div.rw_imgbox img.rw {
+  width: 100%;
+  position: relative;
+  left: 5%;
+  z-index: 10;
+}
+
+.rw_left div.rw_imgbox img.gif {
+  width: 93%;
+  position: absolute;
+  top: 4%;
+  left: 8%;
+}
+
+.rw_left img.rw1 {
+  width: 30%;
+  position: absolute;
+  left: -18%;
+  bottom: -22%;
+  z-index: 20;
+}
+
+.rw_left img.rw2 {
+  width: 16%;
+  position: absolute;
+  left: 7%;
+  bottom: -34%;
+  z-index: 30;
+}
+
+.rw_right {
+  float: right;
+  width: 50%;
+}
+
+.rw_right .tit {
+  position: relative;
+}
+
+.rw_right .tit ul {
+  color: #f8f9fa;
+}
+
+.rw_right .colorfont {
+  margin-top: 30px;
+  display: flex;
+}
+
+.rw_right .colorfont dl.color {
+  margin-right: 80px;
+}
+
+.rw_right .colorfont dl.color dt {
+  color: var(--pf-color);
+  margin-bottom: 10px;
+}
+
+.rw_right .colorfont dl.color dd {
+  color: #999;
+}
+
+.rw_right .colorfont dl.color dd:nth-of-type(1) {
+  background: #fff;
+}
+
+.rw_right .colorfont dl.color dd:nth-of-type(2) {
+  background: #000;
+  border: 1px solid #fff;
+}
+
+.rw_right .colorfont dl.color dd:nth-of-type(3) {
+  background: #642c53;
+}
+
+.rw_right .colorfont dl.font dt {
+  color: var(--pf-color);
+  margin-bottom: 10px;
+}
+
+.rw_right .colorfont dl.font dd {
+  color: var();
+}
+
+.rw_right .produce {
+  display: flex;
+  margin-top: 30px;
+}
+
+.rw_right .produce dl {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.rw_right .produce dl dt {
+  color: var(--pf-color);
+  margin-right: 20px;
+}
+
+.rw_right .produce dl dd {
+  color: #f8f9fa;
+}
+
+.rw_right .skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.rw_right .skill dl {
+  width: 80%;
+}
+
+.rw_right .skill dl dt {
+  color: var(--pf-color);
+  margin-bottom: 10px;
+}
+
+.rw_right .skill dl dd {
+  color: #f8f9fa;
+}
+
+.rw_right .skill div {
+  margin: 30px 0;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 3px;
+}
+
+/* react 영역 */
+#dp {
+  position: relative;
+}
+
+.dp_warp {
+  width: 70%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dp .sec_head .head_tit h2 {
+  color: #f8f9fa;
+}
+#dp .sec_head .head_tit p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--rea-color);
+}
+
+#dp .sec_head a {
+  color: var(--rea-color);
+  border: 1px solid var(--rea-color);
+}
+
+#dp .sec_head a:hover {
+  color: #f8f9fa;
+  background: var(--rea-color);
+}
+
+.dp_left {
+  float: left;
+  width: 50%;
+  position: absolute;
+  top: 26%;
+}
+
+.dp_left div.dp_imgbox {
+  width: 80%;
+  position: relative;
+}
+
+.dp_left div.dp_imgbox img.dp {
+  width: 95%;
+  position: relative;
+  z-index: 10;
+}
+
+.dp_left div.dp_imgbox img.gif {
+  width: 98%;
+  position: absolute;
+  top: 2%;
+  left: 1%;
+}
+
+.dp_right {
+  float: right;
+  width: 50%;
+}
+
+.dp_right .tit {
+  position: relative;
+}
+
+.dp_right .tit p {
+  color: #f8f9fa;
+}
+
+.dp_right .colorfont {
+  margin-top: 30px;
+  display: flex;
+}
+
+.dp_right .colorfont dl.color {
+  margin-right: 80px;
+}
+
+.dp_right .colorfont dl.color dt {
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.dp_right .colorfont dl.color dd {
+  color: #999;
+}
+
+.dp_right .colorfont dl.color dd:nth-of-type(1) {
+  background: #57b7f2;
+}
+
+.dp_right .colorfont dl.color dd:nth-of-type(2) {
+  background: #ccc;
+  box-sizing: border-box;
+}
+
+.dp_right .colorfont dl.color dd:nth-of-type(3) {
+  background: #f8f9fa;
+}
+
+.dp_right .colorfont dl.font dt {
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.dp_right .colorfont dl.font dd {
+  color: #999;
+}
+
+.dp_right .produce {
+  display: flex;
+  margin-top: 30px;
+}
+
+.dp_right .produce dl {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.dp_right .produce dl dt {
+  color: #f8f9fa;
+  margin-right: 20px;
+}
+
+.dp_right .produce dl dd {
+  color: #999;
+}
+
+.dp_right .skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.dp_right .skill dl {
+  width: 80%;
+}
+
+.dp_right .skill dl dt {
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.dp_right .skill dl dd {
+  color: #999;
+}
+
+.dp_right .skill div {
+  margin: 30px 0;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 3px;
+}
+
+/*# sourceMappingURL=style.css.map */
