@@ -239,9 +239,14 @@ section:nth-of-type(6) {
 }
 .sec_head .head_tit p {
   font-size: 4rem;
-  font-family: var(--ft-serif);
+  font-family: var(--ft-sanserif);
   color: #f8f9fa;
 }
+
+#rw .sec_head .head_tit p {
+  font-family: var(--ft-serif);
+}
+
 .sec_head a {
   font-size: 1.5rem;
   font-family: var(--ft-serif);
@@ -585,7 +590,7 @@ section:nth-of-type(6) {
   font-family: var(--ft-serif);
   font-size: 3rem;
   font-weight: 600;
-  color: #acacac;
+  color: #ff5f00;
   margin-left: 20px;
 }
 /* 

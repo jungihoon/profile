@@ -1,0 +1,745 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* font-family: "Noto Serif", serif; */
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: "Noto Serif Display", serif; */
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+.hidden {
+  display: block;
+  position: absolute;
+  left: -1000%;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: #fff;
+}
+
+:root {
+  --pointYellow: rgba(255, 221, 0, 0.422);
+  --lightgray: #f3f3f3;
+  --lightgray2: #dddddd;
+  --appleRed: #fe5f57;
+  --appleYellow: #febc2e;
+  --appleGreen: #2bc83f;
+  --black: #0f0f0f;
+}
+
+@keyframes rotateImg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#wrap .tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  font-weight: 300;
+  width: 100px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px 0;
+  border-radius: 10px;
+  transition: 0.3s ease-out;
+  opacity: 0;
+}
+#wrap .tooltip::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+#wrap .tooltip:hover {
+  opacity: 1;
+  bottom: -45px;
+}
+#wrap header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+#wrap header .headerLeft {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 50%;
+}
+#wrap header .headerLeft h1 {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#wrap header .headerLeft h1 span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: inline-block;
+  margin-left: 5px;
+}
+#wrap header .headerLeft a {
+  padding: 5px 10px;
+  transition: 0.3s ease-out;
+  border-radius: 10px;
+  position: relative;
+}
+#wrap header .headerLeft a:hover {
+  color: #fff;
+  background: #333;
+}
+#wrap header .headerRight {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+#wrap header .headerRight .battery {
+  width: 30px;
+  height: 16px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  position: relative;
+}
+#wrap header .headerRight .battery span:nth-of-type(1) {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 2px;
+  margin: 2px 0 0 2px;
+  transition: 0.5s ease-out;
+}
+#wrap header .headerRight .battery:hover span:nth-of-type(1) {
+  width: 23px;
+  background: #f00;
+}
+#wrap header .headerRight > span {
+  border: 1px solid #333;
+  display: inline-block;
+  text-align: center;
+  width: 35px;
+  border-radius: 5px;
+  line-height: 1.2rem;
+}
+#wrap header .headerRight img {
+  transition: 0.5s ease-out;
+}
+#wrap header .headerRight .wifiImg:hover {
+  transform: scale(1.2);
+}
+#wrap header .headerRight .toggleImg:hover {
+  transform: rotate(180deg);
+}
+#wrap header .headerRight .date i {
+  font-size: 1.2rem;
+  padding-top: 4px;
+}
+#wrap article {
+  width: 100%;
+  background: #1f1f1f;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid #333;
+  position: fixed;
+  top: 46px;
+}
+#wrap article .contentTop {
+  position: relative;
+  overflow: hidden;
+}
+#wrap article .contentTop .btns {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 22px;
+  top: 10px;
+}
+#wrap article .contentTop .btns span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+}
+#wrap article .contentTop .btns span:first-child {
+  background: var(--appleRed);
+}
+#wrap article .contentTop .btns span:nth-of-type(2) {
+  background: var(--appleYellow);
+}
+#wrap article .contentTop .btns span:last-child {
+  background: var(--appleGreen);
+}
+#wrap article .contentTop .subtit {
+  background: #2a2a2a;
+  border: 1px solid #999;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px auto;
+  align-items: center;
+  border-radius: 5px;
+}
+#wrap article .contentTop .subtit p {
+  font-size: 0.83rem;
+  padding: 5px;
+  color: #fff;
+}
+#wrap article nav {
+  width: 20%;
+  height: 100vw;
+  background: #181818;
+  float: left;
+  padding: 20px 0;
+  position: fixed;
+  top: 100px;
+}
+
+#wrap article nav div p {
+  color: #fff;
+}
+#wrap article nav > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+#wrap article nav > div div {
+  display: flex;
+  gap: 5px;
+}
+#wrap article nav > div div span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  background: #333;
+}
+#wrap article nav > div:last-child {
+  position: fixed;
+  left: -3%;
+  bottom: 50px;
+  cursor: pointer;
+  overflow: hidden;
+}
+#wrap article nav > div:last-child img {
+  animation: rotateImg 3s infinite linear;
+}
+#wrap article nav > div:last-child a {
+  position: relative;
+  left: -50px;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+#wrap article nav > div:last-child:hover img {
+  animation-play-state: paused;
+}
+#wrap article nav > div:last-child:hover a {
+  left: 20px;
+  opacity: 1;
+}
+#wrap article nav .depth1 > li > a {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  font-weight: 600;
+}
+
+#wrap article nav .depth1 p,
+#wrap article nav .depth1 a {
+  color: #fff;
+}
+#wrap article nav .depth1 > li > a i {
+  color: #999;
+  margin-left: 5%;
+}
+#wrap article nav .depth1 > li .depth2 {
+  width: 100%;
+}
+#wrap article nav .depth1 > li .depth2 i {
+  margin-left: 10%;
+  color: #999;
+}
+#wrap article nav .depth1 > li .depth2 h4,
+#wrap article nav .depth1 > li .depth2 h5 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+#wrap article nav .depth1 > li .depth2 > li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#wrap article nav .depth1 > li .depth2 > li ul li a img {
+  margin-left: 20%;
+}
+#wrap article nav .depth1 > li .depth2 > li ul li .active {
+  background: #37373d;
+}
+#wrap article nav .depth1 a {
+  transition: 0.5s ease-out;
+  line-height: 2.5rem;
+}
+#wrap article section {
+  float: right;
+  width: 80%;
+  background: #181818;
+  line-height: 1.7rem;
+  position: relative;
+  top: 2px;
+}
+#wrap article section.info {
+  height: 100vh;
+  overflow-y: scroll;
+}
+#wrap article section.info .tabs {
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 100px;
+}
+#wrap article section.info .tabs p {
+  color: #fff;
+}
+#wrap article section.info .tabs ul {
+  display: flex;
+  align-items: center;
+}
+#wrap article section.info .tabs ul li {
+  width: 15.95%;
+  background: #181818;
+  border-left: 1px solid #181818;
+  border-right: 1px solid #181818;
+}
+#wrap article section.info .tabs ul li a {
+  display: flex;
+  line-height: 2.5rem;
+  gap: 5px;
+  align-items: center;
+  color: #606060;
+  padding-left: 20px;
+  transition: 0.3s ease-out;
+}
+#wrap article section.info .tabs ul li a:hover {
+  background: #37373d;
+  color: #fff;
+}
+#wrap article section.info .tabs ul li .on {
+  background: #37373d;
+
+  color: #333;
+}
+#wrap article section.info .con {
+  margin-top: 45px;
+  padding: 30px;
+  color: #ccc;
+  display: none;
+  background: #181818;
+}
+#wrap article section.info .con .indent1 {
+  margin-left: 40px;
+}
+
+#wrap article section.info .con .indent1 .title {
+  color: #fff;
+  font-weight: 700;
+}
+
+#wrap article section.info .con .indent1 .indent2 {
+  margin-left: 70px;
+  color: #fff;
+}
+#wrap article section.info .con1 {
+  display: block;
+}
+
+#wrap article section.info .con {
+  color: #569cd6;
+}
+#wrap article section.info .con span {
+  color: #7cdcf0;
+}
+#wrap article section.info .con em {
+  font-style: normal;
+  color: #bb8b57;
+}
+#wrap article section.info .con i {
+  font-style: normal;
+  color: #555;
+}
+#wrap article section.info .con1 > div {
+  display: flex;
+}
+#wrap article section.info .con1 > div .conLeft {
+  width: 60%;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p {
+  color: #fff;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p:first-child {
+  position: relative;
+  z-index: 1;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p:first-child:hover::before {
+  width: 100%;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p:first-child::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 100%;
+  background: #37373d;
+  position: absolute;
+  left: -70px;
+  top: 0px;
+  z-index: -1;
+  transition: 0.5s ease-out;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p:not(:first-child):hover {
+  color: #ffc300;
+}
+#wrap article section.info .con1 > div .indent1 .indent2 p:not(:first-child):hover span {
+  color: #00a4ec;
+}
+#wrap article section.info .con1 > div .indent1 > ul {
+  color: #333;
+}
+#wrap article section.info .con1 > div .indent1 > ul > li ul {
+  display: flex;
+  width: 100%;
+}
+#wrap article section.info .con1 > div .indent1 > ul > li ul li:nth-of-type(1) {
+  color: #569cd6;
+  width: 15%;
+}
+#wrap article section.info .con1 > div .indent1 > ul > li ul li:nth-of-type(2) {
+  width: 35%;
+  text-align: left;
+  color: #fff;
+}
+#wrap article section.info .con1 > div .indent1 > ul > li ul li:nth-of-type(3) {
+  color: #569cd6;
+  width: 20%;
+}
+#wrap article section.info .con1 > div .conRight {
+  width: 40%;
+  padding-left: 30px;
+  height: 85vh;
+  position: relative;
+}
+#wrap article section.info .con1 > div .conRight p {
+  margin: 86px 0 30px 0;
+}
+#wrap article section.info .con1 > div .conRight img {
+  border: 1px solid #333;
+}
+#wrap article section.info .con1 > div .conRight::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: -30px;
+}
+#wrap article section.info .con2 .indent1 > ul > li {
+  margin-bottom: 50px;
+}
+#wrap article section.info .con2 .indent1 > ul > li:hover {
+  background: none;
+}
+#wrap article section.info .con2 .indent1 > ul > li ul li {
+  display: flex;
+}
+#wrap article section.info .con2 .indent1 > ul > li ul li p:nth-of-type(1) {
+  width: 50%;
+  font-weight: 500;
+}
+#wrap article section.info .con2 .indent1 > ul > li ul li p:nth-of-type(2) {
+  width: 30%;
+  color: #999;
+}
+
+#wrap article section.info .con2 > ul > li ul li:hover {
+  background: #37373d;
+}
+#wrap article section.info .con3 .skillCon {
+  color: #333;
+}
+#wrap article section.info .con3 .skillCon .skillTabs {
+  display: flex;
+  width: 50%;
+}
+#wrap article section.info .con3 .skillCon .skillTabs li {
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  width: 33.33%;
+  padding: 5px 10px;
+  color: #ccc;
+}
+#wrap article section.info .con3 .skillCon .skillTabs .now {
+  color: #fff;
+  background: #1f1f1f;
+  font-weight: 500;
+}
+#wrap article section.info .con3 .skillCon .skillsList {
+  height: 500px;
+  overflow-y: scroll;
+}
+#wrap article section.info .con3 .skillCon .skillsList ul li dl {
+  display: flex;
+  padding: 10px 0;
+  border-top: dashed 1px #ccc;
+}
+#wrap article section.info .con3 .skillCon .skillsList ul li dl dt {
+  width: 20%;
+  font-weight: 500;
+  color: #fff;
+}
+#wrap article section.info .con3 .skillCon .skillsList ul li dl dd {
+  width: 80%;
+  color: #fff;
+  font-weight: 400;
+}
+#wrap article section.info .con4 .indent1 ul:nth-of-type(1) {
+  display: flex;
+  gap: 30px;
+}
+#wrap article section.info .con4 .indent1 ul:nth-of-type(1) li {
+  color: #fff;
+}
+/* #wrap article section.info .con4 .indent1 ul:nth-of-type(1) li:hover {
+  background: none;
+} */
+#wrap article section.info .con4 > div:nth-of-type(2) {
+  margin-bottom: 50px;
+}
+#wrap article section.info .portfolio {
+  padding: 100px 30px;
+  background: var(--black);
+  color: #fff;
+  font-weight: 300;
+}
+#wrap article section.info .portfolio h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+#wrap article section.info .portfolio > ul {
+  counter-reset: pnumber;
+  margin-top: 50px;
+}
+#wrap article section.info .portfolio > ul li {
+  display: flex;
+  gap: 3%;
+  padding: 50px 0;
+  border-top: 0.5px solid #ffffff7d;
+}
+#wrap article section.info .portfolio > ul li dl {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#wrap article section.info .portfolio > ul li dl dt {
+  position: relative;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+#wrap article section.info .portfolio > ul li dl dt::before {
+  content: "";
+  display: inline-block;
+  counter-increment: pnumber;
+  content: "0" counter(pnumber) ".";
+  color: var(--appleYellow);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-right: 5px;
+}
+#wrap article section.info .portfolio > ul li dl dd a {
+  color: #fff;
+  transition: 0.3s ease-out;
+  display: inline-block;
+  font-weight: 500;
+}
+#wrap article section.info .portfolio > ul li dl dd a:hover {
+  background: var(--appleYellow);
+  color: var(--black);
+}
+#wrap article section.info .portfolio > ul li dl dd:nth-of-type(1) {
+  flex-grow: 1;
+}
+#wrap article section.info .portfolio > ul li div {
+  width: 35%;
+  text-align: center;
+}
+#wrap article section.info .portfolio > ul li div img {
+  width: 100%;
+}
+#wrap article section.info .portfolio > ul li:nth-of-type(2) div img {
+  width: 40%;
+}
+
+/*# sourceMappingURL=resume2.css.map */
